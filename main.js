@@ -24,7 +24,9 @@ let admin = Object.assign({},user);
 let admin = {...user};  => {user.name, user.age} user내의 필드값 전개시켜라
 */
 
-let admin = {...user};
+//깊은 복사 JSON 사용 나중에 다시 check
+let admin = JSON.parse(JSON.stringify(user));
+
 
 admin.sizes.height = admin.sizes.height+1; //100 =>101
 console.log(admin.sizes.height); //101
