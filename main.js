@@ -1,60 +1,20 @@
-//연산자 - 산술/대입연산자
+//연산자 - 비교연산자 
+// == 단순 값의 같음을 비교하는 동등비교, === 자료형까지 같음을 판단하는 일치비교
+// ex) 5 == '5' true 5 === '5' false
 
-console.log(31+10-9); //덧셈,뺄셈 연산자
-console.log(31*10); //곱셈 연산자
-console.log(31/10); //나눗셈 연산자
-console.log(parseInt(31/10)); //나눗 셈 몫 구하기
-console.log(31%10); //나머지 연산자 %
-console.log(2**3); //거듭제곱 연산자
+console.log("Z">"A"); // true 순서상 더 뒤에 있으므로 크다고 판단
+console.log("ZA">"AAAA") //길이는 AAAA가 더 길지만 이미 멘 앞의 Z와 A에서 판단났으므로 true 
+console.log("Hello" < "Hi"); //H는 같고 E랑 I 비교해서 순서대로 판단
+console.log("Hello" >= "Helloo"); //o가 하나 더 있으므로 Helloo가 더 큼 false
 
-/*
-let num_1 = 123;
-let num_2 = 456;
-let str_1 = "hello";
-let str_2 = "wordl";
+console.log("5" <= 10); //true
+console.log(true == 1); //true
+console.log(true === 1); //false 자료형이 다르므로
 
-let num_3, str_3;
 
-num_3 = num_1 + num_2;
-str_3 = str_1 + str_2; //문자열 연결도 산술연산으로 가능
-
-console.log(num_3);
-console.log(str_3);
-
-let num_4 = num_1 - num_2;
-console.log(num_4); */
-
-//복합대입 연산자
-let num = 10;
-let result_1, result_2, result_3, result_4, result_5;
-result_1 = result_2 = result_3 = result_4 = result_5 = 31;
-
-result_1 += num;
-console.log(result_1);
-
-result_2 -= num;
-console.log(result_2);
-
-result_3 *= num;
-console.log(result_3);
-
-result_4 /= num;
-console.log(result_4);
-
-result_5 %= num;
-console.log(result_5);
-
-//증가,감소 연산자
-
-let number, re;
-
-number = 10;
-re = number++;
-console.log(re); // 결과 : 10 re1에는  number1(10) 먼저 대입하고 
-console.log(number); //결과 11 +1시켜줌
-
-/* re = ++number; 인경우 이 행에서 바로 ++반영됨
-console.log(re);  결과 11 +1먼저 시키고 
-console.log(number); 결과 11 number대입 
-
---도 마찬가지 */
+//논리 연산자
+console.log(true || false); //t
+console.log(Boolean(0 || false)); //f
+console.log(Boolean(123 && 0)); //f Boolean 안해주면 0 나오더라 
+console.log(Boolean(0 && false)); //f 하나라도 f면 f
+console.log(!123); //f
