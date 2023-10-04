@@ -1,20 +1,71 @@
-//연산자 - 비교연산자 
-// == 단순 값의 같음을 비교하는 동등비교, === 자료형까지 같음을 판단하는 일치비교
-// ex) 5 == '5' true 5 === '5' false
+//Scope 변수/상수에 접근할 수 있는 범위
+//모듈/함수 내 코드에서 동일한 변수 사용시 간섭 줄이는 용도
+// Global scope: 전역에 선언. 어디에서도 접근 가능
+// Local Scope(block, function level scope): 특정지역에 선언/ 해당 지역 내에서만 접근 가능
 
-console.log("Z">"A"); // true 순서상 더 뒤에 있으므로 크다고 판단
-console.log("ZA">"AAAA") //길이는 AAAA가 더 길지만 이미 멘 앞의 Z와 A에서 판단났으므로 true 
-console.log("Hello" < "Hi"); //H는 같고 E랑 I 비교해서 순서대로 판단
-console.log("Hello" >= "Helloo"); //o가 하나 더 있으므로 Helloo가 더 큼 false
+//예제 1 global 
+let x = 1;
+let y = 2;
 
-console.log("5" <= 10); //true
-console.log(true == 1); //true
-console.log(true === 1); //false 자료형이 다르므로
+console.log(x); 
+console.log(y); 
+
+//local 
+{
+    let x = 3;
+    let y = 4;
+
+    console.log(x); //3
+    console.log(y); //4
+}
+
+console.log(x); //1
+console.log(y); //2
+
+//예제 2
+let A =1;
+let B = 2;
+
+{
+    let C = 3;
+    let D = 4;
+
+    console.log(A); //1
+    console.log(C); //3
+}
+    console.log(C); //is not defined
 
 
-//논리 연산자
-console.log(true || false); //t
-console.log(Boolean(0 || false)); //f
-console.log(Boolean(123 && 0)); //f Boolean 안해주면 0 나오더라 
-console.log(Boolean(0 && false)); //f 하나라도 f면 f
-console.log(!123); //f
+
+//예제 3 local 안의 local
+let a = 1;
+
+{
+    let c = 3;
+    let d = 4;
+    console.log(c); //3
+
+    {
+        let c = 5;
+        let d = 6;
+        console.log(c); //5
+    }
+}
+
+//예제 4 block level, function level
+//global scope
+let index = 1000;
+
+//function level
+function local_func() {
+    let index = 100;
+    
+    //block level 
+    for(let index = 0; index < 10; index++) {
+        console.log(index); // 0~9
+    }
+    console.log(index); // 100
+}
+
+local_func();
+console.log(index); // 1000
