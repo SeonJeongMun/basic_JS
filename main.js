@@ -1,19 +1,53 @@
-// 조건문- 3항 연산자
-//3항연산자로  if-else 대체 사용
-//변수 = (조건식) ? 참일 떄 값 : 거짓일 떄 값
+//조건문 switch
 
-let age = 20;
+//예제1
+let day_number = 1;
+let day =""; // let day;만 해도 결과는 같네 이건 문자열로 할거라고 명시적으로 선언하는 건가봄
 
-//조건문 if-else
-if(age < 19) {
-    msg = "The user is not an adult.";
-} else{
-    msg = "The user is an adult.";
+switch (day_number) {
+    case 0:
+        day = "Sunday";
+        break;
+    case 1:
+        day = "Monday";
+        break;
+    case 2:
+        day = "Tuseday";
+        break;
+    case 3:
+        day = "Wednesday";
+        break;
+    case 4:
+        day = "Thursday";
+        break;
+    case 5:
+        day = "Friday";
+        break;
+    case 6:
+        day = "Saturday";
+        break;
+    default:
+        day = "error";
+        break;
+}
+console.log(day);
+
+//예제2
+let browser = "Chrome";
+
+switch(browser) {
+    case "Explorer":
+        msg = "ActiveX installation required";
+        break;
+    case "Chrome": //이렇게 한꺼번에 break 적는것도 가능
+    case "Firefox": 
+    case "Safari":
+    case "Opera":
+        msg = "Supported browsers!";
+        break;
+    default:
+        msg = "Unsupported browsers!";
+        break;                
+
 }
 console.log(msg);
-
-//조건문 3항 연산자
-msg_another = age < 19 ? "The user is not an adult." : "The user is an adult.";
-console.log(msg_another);
-
-//둘다 결과 같음 The user is an adult.
