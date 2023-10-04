@@ -1,53 +1,32 @@
 //조건문 switch
 
-//예제1
-let day_number = 1;
-let day =""; // let day;만 해도 결과는 같네 이건 문자열로 할거라고 명시적으로 선언하는 건가봄
+const day = 3;
+let weekend = "";
 
-switch (day_number) {
-    case 0:
-        day = "Sunday";
+switch (day) {
+    case 1 :
+        weekend = "Monday";
         break;
-    case 1:
-        day = "Monday";
-        break;
-    case 2:
-        day = "Tuseday";
+    case 2 :
+        weekend = "Tuesday";
         break;
     case 3:
-        day = "Wednesday";
+        weekend = "Wednesday";
         break;
     case 4:
-        day = "Thursday";
+        weekend = "Thursday";
         break;
     case 5:
-        day = "Friday";
+        weekend = "Friday";
         break;
     case 6:
-        day = "Saturday";
+        weekend = "Saturday";
         break;
-    default:
-        day = "error";
+    case 7:
+        weekend = "Sunday";
         break;
+    /* 그 이외의 값은 어떻게 하라는 것이 없었으므로 안해도 됨 default:
+        weekend = "error";
+        break; */
 }
-console.log(day);
-
-//예제2
-let browser = "Chrome";
-
-switch(browser) {
-    case "Explorer":
-        msg = "ActiveX installation required";
-        break;
-    case "Chrome": //이렇게 한꺼번에 break 적는것도 가능
-    case "Firefox": 
-    case "Safari":
-    case "Opera":
-        msg = "Supported browsers!";
-        break;
-    default:
-        msg = "Unsupported browsers!";
-        break;                
-
-}
-console.log(msg);
+console.log(weekend);
